@@ -21,8 +21,8 @@ app.use(morgan("common"));
 
 app.get("/", function(req, res, next) {
   database.raw('select LOC_ID from sightings')
-    .then(([rows, columns]) => rows[0])
-    .then((row) => res.json({ message: `Hello from MySQL ${row.LOC_ID}` }))
+    .then(([rows, columns]) => rows[5])
+    .then((row) => res.json({ message: `${row.LOC_ID}` }))
     .catch(next);
 });
 
